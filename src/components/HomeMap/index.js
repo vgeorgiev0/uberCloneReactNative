@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     backgroundColor: BLACK,
     height: 200,
     justifyContent: 'center',
+    marginBottom: -15,
   },
   text: {
     color: WHITE,

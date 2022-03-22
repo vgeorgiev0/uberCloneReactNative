@@ -1,13 +1,14 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {BLACK, GREY, WHITE} from '../../Constants/Colors';
+import {BLACK, BLUE, GREY, WHITE} from '../../Constants/Colors';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 const HomeSearch = () => {
   return (
     <View>
-      {/* <Text>Home Search</Text> */}
+      {/* input Box */}
       <View style={styles.inputBox}>
         <Text style={styles.inputText}>Where To</Text>
         <View style={styles.timeContainer}>
@@ -16,9 +17,20 @@ const HomeSearch = () => {
           <MaterialIcons name="keyboard-arrow-down" size={18} color={BLACK} />
         </View>
       </View>
-      {/* input Box */}
       {/* Prev dest */}
+      <View style={styles.row}>
+        <View style={styles.iconContainer}>
+          <AntDesign name="clockcircle" size={20} color={WHITE} />
+        </View>
+        <Text style={styles.destinationText}>Spin Nightclub</Text>
+      </View>
       {/* Home dest */}
+      <View style={styles.row}>
+        <View style={[styles.iconContainer, {backgroundColor: BLUE}]}>
+          <Entypo name="home" size={20} color={WHITE} />
+        </View>
+        <Text style={styles.destinationText}>Home</Text>
+      </View>
     </View>
   );
 };
@@ -49,4 +61,17 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   now: {},
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: GREY,
+  },
+  destinationText: {marginLeft: 15, fontWeight: '600', fontSize: 16},
+  iconContainer: {
+    backgroundColor: `${BLACK}6a`,
+    padding: 15,
+    borderRadius: 25,
+  },
 });
