@@ -1,17 +1,17 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
-const pink = '#faaf';
+import HomeMap from '../../components/HomeMap';
+import CovidMessage from '../../components/CovidMessage';
+import HomeSearch from '../../components/HomeSearch';
 
 const HomeScreen = () => {
   return (
     <View>
-      <Text style={styles.text}>index</Text>
+      <HomeMap />
+      <CovidMessage />
+      <HomeSearch />
     </View>
   );
 };
 
 export default HomeScreen;
-
-const styles = StyleSheet.create({
-  text: {backgroundColor: pink},
-});

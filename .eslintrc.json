@@ -21,8 +21,8 @@
       "error",
       "asc",
       {
-        "ignoreClassNames": false,
-        "ignoreStyleProperties": false
+        "ignoreClassNames": true,
+        "ignoreStyleProperties": true
       }
     ]
   }
