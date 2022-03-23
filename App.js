@@ -11,13 +11,13 @@ import type {Node} from 'react';
 import {View} from 'react-native';
 
 // import HomeScreen from './src/screens/HomeScreen';
-// import DestinationSearch from './src/screens/DestinationSearch';
-import SearchResult from './src/screens/SearchResult';
+import DestinationSearch from './src/screens/DestinationSearch';
+// import SearchResult from './src/screens/SearchResult';
 
 const App: () => Node = () => {
   return (
     <View>
-      <SearchResult />
+      <DestinationSearch />
     </View>
   );
 };
