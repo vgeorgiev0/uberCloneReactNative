@@ -27,7 +27,13 @@ const HomeMap = () => {
           <Marker
             key={car.id}
             coordinate={{latitude: car.latitude, longitude: car.longitude}}>
-            <Image style={styles.marker} source={getImageName(car.type)} />
+            <Image
+              style={[
+                styles.marker,
+                {transform: [{rotate: `${car.heading}deg`}]},
+              ]}
+              source={getImageName(car.type)}
+            />
           </Marker>
         ))}
       </MapView>
