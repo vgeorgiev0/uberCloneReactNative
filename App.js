@@ -10,14 +10,14 @@ import React from 'react';
 import type {Node} from 'react';
 import {View} from 'react-native';
 
-import HomeScreen from './src/screens/HomeScreen';
+// import HomeScreen from './src/screens/HomeScreen';
 // import DestinationSearch from './src/screens/DestinationSearch';
-// import SearchResult from './src/screens/SearchResult';
+import SearchResult from './src/screens/SearchResult';
 
 const App: () => Node = () => {
   return (
     <View>
-      <HomeScreen />
+      <SearchResult />
     </View>
   );
 };

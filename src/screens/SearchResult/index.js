@@ -1,13 +1,13 @@
 import {StyleSheet, Dimensions, View} from 'react-native';
 import React from 'react';
-import HomeMap from '../../components/HomeMap';
 import UberTypes from '../../components/UberTypes';
+import RouteMap from '../../components/RouteMap';
 
 const SearchResult = () => {
   return (
     <View style={styles.container}>
       <View style={styles.map}>
-        <HomeMap />
+        <RouteMap />
       </View>
       <View style={styles.types}>
         <UberTypes />

@@ -39,11 +39,6 @@ export default HomeMap;
 
 const styles = StyleSheet.create({
   view: {
-    // alignItems: 'center',
-    // backgroundColor: BLACK,
-    // height: 200,
-    // justifyContent: 'center',
-    // marginBottom: -15,
     height: '100%',
     width: '100%',
   },
