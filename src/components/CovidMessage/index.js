@@ -8,10 +8,7 @@ const CovidMessage = () => {
       <Text style={styles.title}>Travel only if necessary</Text>
       <Text style={styles.text}>
         If you are already familiar with mobile development, you may want to use
-        React Native CLI. It requires Xcode or Android Studio to get started. If
-        you already have one of these tools installed, you should be able to get
-        up and running within a few minutes. If they are not installed, you
-        should expect to spend about an hour installing and configuring them.
+        React Native CLI. It requires Xcode or Android Studio to get started.
       </Text>
       <Text style={styles.learnMore}>Learn More</Text>
     </View>
@@ -24,6 +21,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: BLUE,
     padding: 15,
+    marginTop: -25,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
   },

@@ -8,20 +8,16 @@
 
 import React from 'react';
 import type {Node} from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 
-import Icon from 'react-native-vector-icons/AntDesign';
-
-import HomeScreen from './src/screens/HomeScreen';
+// import HomeScreen from './src/screens/HomeScreen';
+// import DestinationSearch from './src/screens/DestinationSearch';
+import SearchResult from './src/screens/SearchResult';
 
 const App: () => Node = () => {
-  const myIcon = <Icon name="stepforward" size={30} color="#900" />;
-
   return (
     <View>
-      {myIcon}
-      <Text>Hi</Text>
-      <HomeScreen />
+      <SearchResult />
     </View>
   );
 };
