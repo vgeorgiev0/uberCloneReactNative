@@ -26,14 +26,14 @@ const HomeSearch = () => {
       {/* Prev dest */}
       <View style={styles.row}>
         <View style={styles.iconContainer}>
-          <AntDesign name="clockcircle" size={20} color={WHITE} />
+          <AntDesign name="clockcircle" size={18} color={WHITE} />
         </View>
         <Text style={styles.destinationText}>Spin Nightclub</Text>
       </View>
       {/* Home dest */}
       <View style={styles.row}>
         <View style={[styles.iconContainer, {backgroundColor: BLUE}]}>
-          <Entypo name="home" size={20} color={WHITE} />
+          <Entypo name="home" size={18} color={WHITE} />
         </View>
         <Text style={styles.destinationText}>Home</Text>
       </View>
