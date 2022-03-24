@@ -12,6 +12,7 @@ import type {Node} from 'react';
 import {View} from 'react-native';
 import {PermissionsAndroid, Platform} from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
+navigator.geolocation = require('@react-native-community/geolocation');
 
 // import HomeScreen from './src/screens/HomeScreen';
 import DestinationSearch from './src/screens/DestinationSearch';
@@ -23,7 +24,7 @@ const App: () => Node = () => {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
         {
-          title: 'Uber App Camera Permission',
+          title: 'Uber App Location Permission',
           message:
             'Uber App needs access to your location ' +
             'so you can take awesome rides.',
