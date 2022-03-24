@@ -1,18 +1,31 @@
 import {View, SafeAreaView} from 'react-native';
 import React, {useState, useEffect} from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import styles from './styles';
 import env from '../../config/env';
 import PlaceRow from './PlaceRow';
 const api = env.GOOGLE_API_KEY;
 
+// TODO Research all of react-native-google-places-autocomplete features
+
+const homePlace = {
+  description: 'Home',
+  geometry: {location: {lat: 48.8152937, lng: 2.4597668}},
+};
+const workPlace = {
+  description: 'Work',
+  geometry: {location: {lat: 48.8496818, lng: 2.2940881}},
+};
+
 const DestinationSearch = () => {
   const [originPlace, setOriginPlace] = useState(null);
   const [destinationPlace, setDestinationPlace] = useState(null);
+  const navigation = useNavigation();
 
   useEffect(() => {
     if (originPlace && destinationPlace) {
-      console.log('Redirect');
+      navigation.navigate('SearchResult');
     }
   }, [originPlace, destinationPlace]);
 
@@ -22,6 +35,8 @@ const DestinationSearch = () => {
         <GooglePlacesAutocomplete
           enablePoweredByContainer={false}
           suppressDefaultStyles
+          currentLocation={true}
+          currentLocationLabel="Current location"
           styles={{
             textInput: styles.textInput,
             container: styles.autocompleteContainer,
@@ -39,6 +54,8 @@ const DestinationSearch = () => {
             language: 'en',
           }}
           renderRow={data => <PlaceRow data={data} />}
+          renderDescription={data => data.description || data.vicinity}
+          predefinedPlaces={[homePlace, workPlace]}
         />
         <GooglePlacesAutocomplete
           enablePoweredByContainer={false}
@@ -62,6 +79,7 @@ const DestinationSearch = () => {
             language: 'en',
           }}
           renderRow={data => <PlaceRow data={data} />}
+          predefinedPlaces={[workPlace]}
         />
         {/* Circle near Origin input */}
         <View style={styles.circle} />
