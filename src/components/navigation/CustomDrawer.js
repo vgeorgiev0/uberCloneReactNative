@@ -1,7 +1,6 @@
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable react-native/no-color-literals */
 import React from 'react';
-import {View, Text, Pressable} from 'react-native';
+import {View, Text, Pressable, StyleSheet} from 'react-native';
+import {BLACK, GREY, WHITE} from '../../Constants/Colors';
 import {
   DrawerContentScrollView,
   DrawerItemList,
@@ -10,67 +9,37 @@ import {
 const CustomDrawer = props => {
   return (
     <DrawerContentScrollView {...props}>
-      <View style={{backgroundColor: '#212121', padding: 15}}>
-        {/* User Row */}
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-          }}>
-          <View
-            style={{
-              backgroundColor: '#cacaca',
-              width: 50,
-              height: 50,
-              borderRadius: 25,
-              marginRight: 10,
-            }}
-          />
+      <View style={styles.container}>
+        <View style={styles.userRow}>
+          <View style={styles.userPic} />
 
           <View>
-            <Text style={{color: 'white', fontSize: 24}}>
-              Valentin Georgiev
-            </Text>
-            <Text style={{color: 'lightgrey'}}>5.00 *</Text>
+            <Text style={styles.userName}>Valentin Georgiev</Text>
+            <Text style={styles.userMoney}>5.00 *</Text>
           </View>
         </View>
 
-        {/* Messages Row */}
-        <View
-          style={{
-            borderBottomWidth: 1,
-            borderBottomColor: '#919191',
-            borderTopWidth: 1,
-            borderTopColor: '#919191',
-            paddingVertical: 5,
-            marginVertical: 10,
-          }}>
+        <View style={styles.messagesRow}>
           <Pressable
             onPress={() => {
               console.warn('Messages');
             }}>
-            <Text style={{color: '#dddddd', paddingVertical: 5}}>Messages</Text>
+            <Text style={styles.messagesText}>Messages</Text>
           </Pressable>
         </View>
 
-        {/* Do more */}
         <Pressable
           onPress={() => {
             console.warn('Make Money Driving');
           }}>
-          <Text style={{color: '#dddddd', paddingVertical: 5}}>
-            Do more with your account
-          </Text>
+          <Text style={styles.messagesText}>Do more with your account</Text>
         </Pressable>
 
-        {/* Make money */}
         <Pressable
           onPress={() => {
             console.warn('Make Money Driving');
           }}>
-          <Text style={{color: 'white', paddingVertical: 5}}>
-            Make money driving
-          </Text>
+          <Text style={styles.messagesText}>Make money driving</Text>
         </Pressable>
       </View>
 
@@ -78,5 +47,28 @@ const CustomDrawer = props => {
     </DrawerContentScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {backgroundColor: BLACK, padding: 15},
+  userRow: {flexDirection: 'row', alignItems: 'center'},
+  userPic: {
+    backgroundColor: GREY,
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    marginRight: 10,
+  },
+  userName: {color: WHITE, fontSize: 24},
+  userMoney: {color: `${GREY}2a`},
+  messagesRow: {
+    borderBottomWidth: 1,
+    borderBottomColor: GREY,
+    borderTopWidth: 1,
+    borderTopColor: GREY,
+    paddingVertical: 5,
+    marginVertical: 10,
+  },
+  messagesText: {color: WHITE, paddingVertical: 5},
+});
 
 export default CustomDrawer;
