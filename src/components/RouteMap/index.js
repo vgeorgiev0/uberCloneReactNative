@@ -19,6 +19,7 @@ const RouteMap = () => {
     <View>
       <MapView
         style={styles.view}
+        showUserLocation={true}
         initialRegion={{
           latitude: 28.450627,
           longitude: -16.263045,

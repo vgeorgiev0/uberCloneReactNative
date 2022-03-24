@@ -1,5 +1,6 @@
 import {View, SafeAreaView} from 'react-native';
 import React, {useState, useEffect} from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import styles from './styles';
 import env from '../../config/env';
@@ -20,10 +21,11 @@ const workPlace = {
 const DestinationSearch = () => {
   const [originPlace, setOriginPlace] = useState(null);
   const [destinationPlace, setDestinationPlace] = useState(null);
+  const navigation = useNavigation();
 
   useEffect(() => {
     if (originPlace && destinationPlace) {
-      console.log('Redirect');
+      navigation.navigate('SearchResult');
     }
   }, [originPlace, destinationPlace]);
 
@@ -77,6 +79,7 @@ const DestinationSearch = () => {
             language: 'en',
           }}
           renderRow={data => <PlaceRow data={data} />}
+          predefinedPlaces={[workPlace]}
         />
         {/* Circle near Origin input */}
         <View style={styles.circle} />

@@ -1,22 +1,28 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {BLACK, BLUE, GREY, WHITE} from '../../Constants/Colors';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 
 const HomeSearch = () => {
+  const navigation = useNavigation();
   return (
     <View>
       {/* input Box */}
-      <View style={styles.inputBox}>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('DestinationSearch');
+        }}
+        style={styles.inputBox}>
         <Text style={styles.inputText}>Where To</Text>
         <View style={styles.timeContainer}>
           <AntDesign name="clockcircle" size={20} color={`${BLACK}9a`} />
           <Text style={styles.now}> Now </Text>
           <MaterialIcons name="keyboard-arrow-down" size={18} color={BLACK} />
         </View>
-      </View>
+      </TouchableOpacity>
       {/* Prev dest */}
       <View style={styles.row}>
         <View style={styles.iconContainer}>
