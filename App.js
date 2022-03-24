@@ -9,17 +9,12 @@
 
 import React, {useEffect} from 'react';
 import type {Node} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {PermissionsAndroid, Platform} from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
 navigator.geolocation = require('@react-native-community/geolocation');
+import 'react-native-gesture-handler';
 
-import HomeScreen from './src/screens/HomeScreen';
-import DestinationSearch from './src/screens/DestinationSearch';
-import SearchResult from './src/screens/SearchResult';
-
-const Stack = createNativeStackNavigator();
+import RootNavigator from './src/navigation/RootNavigator';
 
 const App: () => Node = () => {
   const androidPermission = async () => {
@@ -56,16 +51,9 @@ const App: () => Node = () => {
   }, []);
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="DestinationSearch" component={DestinationSearch} />
-        <Stack.Screen name="SearchResult" component={SearchResult} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      <RootNavigator />
+    </>
   );
 };
 
